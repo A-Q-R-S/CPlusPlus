@@ -65,7 +65,6 @@ bool Compare(tiii A, tiii B)
 	return third(A) > third(B);
 }
 
-
 void Kruskal(const int &N, const int &M, const int &K, std::vector<tiii> &data)
 {
 	std::sort(data.begin(), data.end(), Compare);													//sort(up) to get the biggest edges first
