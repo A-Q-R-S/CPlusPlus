@@ -1,4 +1,7 @@
-﻿/**/#define _CRT_SECURE_NO_WARNINGS																	//no warnings
+﻿//version : 1.0
+//YY-MM-DD: 18/05/20
+
+/**/#define _CRT_SECURE_NO_WARNINGS																	//no warnings
 /**/#include <utility>																				//system("pause")																			//system("pause")
 /**/#include "stdafx.h"
 #include <stdio.h>
