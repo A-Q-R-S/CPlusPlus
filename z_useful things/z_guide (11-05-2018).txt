@@ -1,0 +1,56 @@
+﻿- Algorithm	- Time				- Memory	- Stability	- Useful when?			- Specifics
+selectionsort	- O(n^2)			- O(1)		- unstable	- small n			- (1 structure of memory)
+insertionsort	- O(n^2)			- O(1)		- stable	- small n, partially sorted	- Online
+countingsort	- Θ(n+k)			- O(k)		- stable	- (max - min) is small
+bucketsort	- Θ(n+k)			- O(n+k)	- stable	- (max - min) is small
+heapsort  	- O(n*log(n)) 			- O(1)		- unstable 	- less memory than in mergesort - (1 structure of memory)
+mergesort 	- O(n*log(n)) 			- O(n)		- stable     	- count inversions when merging - (the structure can be divided into parts)
+quicksort 	- O(n*log(n)) to O(n^2)		- O(log(n))	- unstable 	- can become [n^2]              - (the structure can be divided into parts)
+std::sort 	- O(n*log(n)) avg case				- unstable
+std::stable_sort- O(n*log^2(n)) worst case			- stable
+shellsort	- O(n^3/2) to O(n*log^2(n))	- O(n)		- unstable	- 				- 
+radixsort	- 				- 		- 		-				- Z numbers & strings
+_______________________________________________________________________________________________________________
+priority_queue< T, std::vector<T>, std::less<T>|std::greater<T>|Struct_with_CustomCompare_func >
+std::sort(container.begin(), container.end(), std::less<T>|std::greater<T>|CustomCompare_func)
+
+struct CustomCompare
+{  bool operator() (Node n1,Node n2)
+     {  compare nodes }
+};
+_______________________________________________________________________________________________________________
+int **matrix;			///matrix:	pointer
+matrix = new int *[N];		///		|-> to array of pointers
+for(size_t i = 0; i <M; i++)	///				|-> to arrays of integers
+{  matrix[i] = new int[N];  }	///
+_______________________________________________________________________________________________________________
+memset(arr,0,sizeof(type)*count) - clearing the array to 0-s	//#include <string.h>
+memcpy
+_______________________________________________________________________________________________________________
+try
+{ ... }
+catch(const char* &ex)
+{  cout << ex << endl;  }
+_______________________________________________________________________________________________________________
+clock_t timerX = clock();					//#include <ctime>
+
+auto t1 = std::chrono::high_resolution_clock::now();		//#include <chrono>
+auto t2 = std::chrono::high_resolution_clock::now();		//~
+std::chrono::duration<double> time_span = std::chrono::duration_cast<std::chrono::duration<double>>(t1 - t2);
+std::cout << time_span.count() << " seconds passed\n";
+_______________________________________________________________________________________________________________
+filter(const <container<T>>&, bool(*pred)(const T &))
+{  loop
+   {  if (pred(*iter))
+        result.push_back(*iter);
+      ++iter;
+   }
+}
+_______________________________________________________________________________________________________________
+std::shared_ptr<T> *index[SIZE];				//#include <memory>
+loop{  index[iter] = std::make_shared<T>(VALUE);  }
+
+_______________________________________________________________________________________________________________
+fgetc(STREAM)
+fgets(elem, maxsize+1, (STREAM))				//maxsize+1 for the '\n'
+arr[i][strcspn(arr[i], "\r\n")] = '\0';				//cut the '\n' ???
